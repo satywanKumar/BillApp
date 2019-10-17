@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+    <div *ngIf="!isData" style="text-align: center;">
+        <img class="loader" src="assets/tenor.gif"/>
+    </div>
+    <div style="width:90%;">
+        <canvas style="height:200px !important;" id="canvas"></canvas>
+    </div>
+  <div *ngIf="isData" class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h2>{{item.name}}</h2>
+        <p>{{item.email}}</p><br>
+      </div><br>
+      <p class="sub-heading">Personal Detail</p><br>
+      <p>Reggistration No : {{item.reggNo}}</p>
+      <p>Batch : {{item.batch}}</p>
+      <p>Phone : {{item.phone}}</p>
+      <p>D.O.B : {{item.dob}}</p>
+      <p>Hobby : {{item.hobby}}</p>
+      <p>Aadhar Number : {{item.uid}}</p>
+      <p>Parent's Name : {{item.parentsName}}</p>
+      <p>Relation : {{item.relation}}</p>
+      <p>Parent's Phone : {{item.parentsPhone}}</p>
+
+      <br>
+      <p class="sub-heading">Temporary Address</p><br>
+      <p>{{item.tempAdd}}</p>
+      <p>pin : {{item.tempPin}}</p>
+      <br>
+      <p class="sub-heading">Permanent Address</p><br>
+      <p>{{item.perAdd}}</p>
+      <p>pin : {{item.perPin}}</p>
+
+      <br>
+      <p class="sub-heading">10th detail</p><br>
+      <p>Board : {{item.tenthBoard}}</p>
+      <p>School : {{item.tenthSchool}}</p>
+      <p>Total Marks : {{item.tenthTotalMarks}}</p>
+      <p>Obtained Marks : {{item.tenthMarksObtained}}</p>
+
+      
+      <br>
+      <p class="sub-heading">12th/Diploma detail</p><br>
+      <p>Board : {{item.twelthBoard}}</p>
+      <p>School : {{item.twelthSchool}}</p>
+      <p>Total Marks : {{item.twelthTotalMarks}}</p>
+      <p>Obtained Marks : {{item.twelthMarksObtained}}</p>
+
+      <br>
+      <p class="sub-heading">B.tech</p><br>
+       <table>
+         <tr>
+           <th>1st</th>
+           <th>2nd</th>
+           <th>3rd</th>
+           <th>4th</th>
+           <th>5th</th>
+           <th>6th</th>
+           <th>7th</th>
+           <th>8th</th>
+         </tr>
+         <tr>
+           <td>{{item.btech1st}}</td>
+           <td>{{item.btech2nd}}</td>
+           <td>{{item.btech3rd}}</td>
+           <td>{{item.btech4th}}</td>
+           <td>{{item.btech5th}}</td>
+           <td>{{item.btech6th}}</td>
+           <td>{{item.btech7th}}</td>
+           <td>{{item.btech8th}}</td>
+         </tr>
+       </table>
+
+       <br>
+       <p class="sub-heading">Additional Detail</p><br>
+       <p>Skills : {{item.skill}}</p>
+       <p>Extra Course : {{item.extraCourse}}</p>
+       <p>Achievement : {{item.achievement}}</p><br><br>
+       
+
+       <div class="footer">
+         <button mat-flat-button color="primary">Edit</button>
+         <button (click)="delete()" style="margin-left:10%;" mat-flat-button color="warn">Delete</button>
+       </div>
+
+    </div>
+  </div>
+</body>
+</html>

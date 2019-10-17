@@ -1,0 +1,39 @@
+body{
+    font-family: Comic Sans MS;
+}
+.container
+{
+    padding:20px;
+}
+table
+{
+    width:100%;
+    border-collapse: collapse;
+    
+}
+th,td{
+    text-align: left;
+    padding: 7px;
+
+}
+th
+{
+    background-color:teal;
+    color: white;
+}
+td{
+    background-color: #eee;
+}
+tr
+{
+    border-bottom: 1px solid black;
+}
+tr:hover
+{
+    cursor: pointer;
+}
+.loader
+{
+    margin-top:100px;
+    width:70px;
+}

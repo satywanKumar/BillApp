@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+   <div class="container">
+      <div *ngIf="!isData" style="text-align: center;">
+          <img class="loader" src="assets/tenor.gif"/>
+      </div>
+      <table *ngIf="isData">
+          <tr>
+            <th>Name</th>
+            <th>Regg. No</th>
+            <th>Batch</th>
+          </tr>
+          <tr (click)="viewDetails(item)" *ngFor="let item of item">
+            <td>{{item.payload.doc.data().name}}</td>
+            <td>{{item.payload.doc.data().reggNo}}</td>
+            <td>{{item.payload.doc.data().batch}}</td>
+          </tr>
+        </table>
+   </div>
+</body>
+</html>

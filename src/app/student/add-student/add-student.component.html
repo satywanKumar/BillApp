@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div>
+    <form>
+        <mat-form-field>
+            <input matInput name="name" [(ngModel)]="newStudent.name" type="text" placeholder="Full name"  required>
+            <mat-error>userName must be required</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput name="branch" [(ngModel)]="newStudent.branch" type="text" placeholder="Branch"  required>
+            <mat-error>userName must be required</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput name="reggNo" [(ngModel)]="newStudent.reggNo" type="text" placeholder="Registration No"  required>
+            <mat-error>userName must be required</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput name="batch" [(ngModel)]="newStudent.batch" type="text" placeholder="Batch"  required>
+          <mat-error>Batch must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="email" [(ngModel)]="newStudent.email" type="text" placeholder="Email"  required>
+        <mat-error>Email must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="phone" [(ngModel)]="newStudent.phone" type="text" placeholder="Phone NO"  required>
+        <mat-error>Phone No must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="parentsName" [(ngModel)]="newStudent.parentsName" type="text" placeholder="Parents Name"  required>
+        <mat-error>Parents Name must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       
+       <mat-form-field>
+        <input matInput name="relation" [(ngModel)]="newStudent.relation" type="text" placeholder="Relation"  required>
+        <mat-error>Parents Name must be required</mat-error>
+       </mat-form-field>
+       <br>
+ 
+       <mat-form-field>
+        <input matInput name="parentsPhone" [(ngModel)]="newStudent.parentsPhone" type="text" placeholder="Parents Phone NO"  required>
+        <mat-error>Parents phone no must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="dob" [(ngModel)]="newStudent.dob" type="text" placeholder="D.O.B (DD-MM-YY)"  required>
+        <mat-error>Parents Name must be required</mat-error>
+       </mat-form-field>
+       <br>
+       
+       <mat-form-field>
+        <input matInput name="skill" [(ngModel)]="newStudent.skill" type="text" placeholder="Skill">
+       </mat-form-field>
+       <br>
+       
+       <mat-form-field>
+        <input matInput name="hobby" [(ngModel)]="newStudent.hobby" type="text" placeholder="Hobby"  required>
+        <mat-error>Hobby must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       
+       <mat-form-field>
+        <input matInput name="uid" [(ngModel)]="newStudent.uid" type="text" placeholder="Aadhar No"  required>
+        <mat-error>Aadhar number must be required</mat-error>
+       </mat-form-field>
+       <br>
+       
+       <mat-form-field>
+        <input matInput name="tenthBoard" [(ngModel)]="newStudent.tenthBoard" type="text" placeholder="Board"  required>
+        <mat-error>Board Name must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       
+       <mat-form-field>
+        <input matInput name="tenthSchool" [(ngModel)]="newStudent.tenthSchool" type="text" placeholder="School"  required>
+        <mat-error>School Name must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       
+       <mat-form-field>
+        <input matInput name="tenthMarksObtained" [(ngModel)]="newStudent.tenthMarksObtained" type="text" placeholder="Obtained Marks"  required>
+        <mat-error>Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       
+       <mat-form-field>
+        <input matInput name="tenthTotalMarks" [(ngModel)]="newStudent.tenthTotalMarks" type="text" placeholder="Total Marks"  required>
+        <mat-error>Total Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+
+       <mat-form-field>
+        <input matInput name="twelthBoard" [(ngModel)]="newStudent.twelthBoard" type="text" placeholder="Board"  required>
+        <mat-error>Board Name must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       
+       <mat-form-field>
+        <input matInput name="twelthSchool" [(ngModel)]="newStudent.twelthSchool" type="text" placeholder="School"  required>
+        <mat-error>School Name must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       
+       <mat-form-field>
+        <input matInput name="twelthMarksObtained" [(ngModel)]="newStudent.twelthMarksObtained" type="text" placeholder="Obtained Marks"  required>
+        <mat-error>Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       
+       <mat-form-field>
+        <input matInput name="twelthTotalMarks" [(ngModel)]="newStudent.twelthTotalMarks" type="text" placeholder="Total Marks"  required>
+        <mat-error>Total Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="twelthTotalMarks" [(ngModel)]="newStudent.twelthTotalMarks" type="text" placeholder="Total Marks"  required>
+        <mat-error>Total Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="btech1st" [(ngModel)]="newStudent.btech1st" type="text" placeholder="B.tech 1st sem."  required>
+        <mat-error>Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="btech2nd" [(ngModel)]="newStudent.btech2nd" type="text" placeholder="B.tech 2nd sem."  required>
+        <mat-error>Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="btech3rd" [(ngModel)]="newStudent.btech3rd" type="text" placeholder="B.tech 3rd sem."  required>
+        <mat-error>Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="btech4th" [(ngModel)]="newStudent.btech4th" type="text" placeholder="B.tech 4th sem."  required>
+        <mat-error>Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="btech5th" [(ngModel)]="newStudent.btech5th" type="text" placeholder="B.tech 5th sem."  required>
+        <mat-error>Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="btech6th" [(ngModel)]="newStudent.btech6th" type="text" placeholder="B.tech 6th sem."  required>
+        <mat-error>Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="btech7th" [(ngModel)]="newStudent.btech7th" type="text" placeholder="B.tech 7th sem."  required>
+        <mat-error>Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="btech8th" [(ngModel)]="newStudent.btech8th" type="text" placeholder="B.tech 8th sem."  required>
+        <mat-error>Marks must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="extraCourse" [(ngModel)]="newStudent.extraCourse" type="text" placeholder="Extra Course"  required>
+        <mat-error>it must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="achievement" [(ngModel)]="newStudent.achievement" type="text" placeholder="Achievement"  required>
+        <mat-error>it must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="tempAdd" [(ngModel)]="newStudent.tempAdd" type="text" placeholder="Temp. Address"  required>
+        <mat-error>it must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       <mat-form-field>
+        <input matInput name="tempPin" [(ngModel)]="newStudent.tempPin" type="text" placeholder="Pin Code"  required>
+        <mat-error>it must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       
+       <mat-form-field>
+        <input matInput name="perAdd" [(ngModel)]="newStudent.perAdd" type="text" placeholder="Permanent Address"  required>
+        <mat-error>it must be required</mat-error>
+       </mat-form-field>
+       <br>
+       
+       <mat-form-field>
+        <input matInput name="perPin" [(ngModel)]="newStudent.perPin" type="text" placeholder="Pin Code"  required>
+        <mat-error>it must be required</mat-error>
+       </mat-form-field>
+       <br>
+
+       
+
+       
+
+       
+       
+       
+       
+
+
+
+
+
+
+
+
+
+       
+
+
+      
+        <button mat-flat-button type="submit" (click)="addStudent()">submit</button>
+    </form>
+  </div>
+</body>
+</html>

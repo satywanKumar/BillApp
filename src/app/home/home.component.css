@@ -1,0 +1,33 @@
+body{
+    background-color:#3f51b5;
+    text-align: center;
+    font-family: Comic Sans MS;
+    
+}
+h1{
+    color: white;
+    padding-left:5px;
+    padding-right: 5px;;
+    padding-top:15%;
+    
+}
+.dept
+{
+    color:white;
+    padding:10px;
+}
+.submitted
+{
+    color:white;
+    padding:0px
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.fadeInAnimation {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+  }
+

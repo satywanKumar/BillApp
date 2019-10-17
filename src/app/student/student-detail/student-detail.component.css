@@ -1,0 +1,28 @@
+body{
+    font-family: 'montserrat';
+}
+.container
+{
+    padding: 20px;
+}
+.sub-heading
+{
+    background-color: teal;
+    color:white;
+    padding:5px;
+}
+.loader
+{
+    margin-top:100px;
+    width:70px;
+}
+table{
+    width:100%;
+    border-collapse: collapse;
+}
+th,td
+{
+    text-align:left;
+    border:1px solid black;
+    padding: 1px;
+}
