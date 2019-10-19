@@ -16,8 +16,10 @@ export class StudentListComponent implements OnInit {
               public router:Router,
               public dialog:MatDialog) { }
 
-  item:any[] = [];
-  isData:boolean = false;
+      studentList = [];
+      deleteMessage:boolean;
+      searchTerm:string;
+      isData:boolean = false;
 
 
   ngOnInit() {
@@ -26,20 +28,25 @@ export class StudentListComponent implements OnInit {
   }
   getStudent()
   {
-    this.studentService.getAllStudent().subscribe(res=>{
+    this.studentService.getAllStudent().subscribe(data=>{
       this.isData = true;
-      console.log(res);
-      this.item = res;
-    },
-    (err)=>{
-      this.dialog.open(NoticeComponent, {
-        width: '350px',
-        data:{alertMsg:err}
+      this.studentList = data.map(item=>{
+        return{
+          $key:item.key,
+          ...item.payload.val()
+        };
       });
-    })
-  }
-  viewDetails(item){
-    this.router.navigate(['/dashboard/detail',item.payload.doc.id]);
+      console.log(this.studentList);
+    });
   }
 
+ viewDetails(id)
+ {
+   console.log(id);
+   this.router.navigate(['/dashboard/student-detail',id]);
+ }
+
+ edit(student){
+   this.studentService.populateForm(student);
+ }
 }

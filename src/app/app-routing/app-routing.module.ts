@@ -7,12 +7,16 @@ import { StudentListComponent } from '../student/student-list/student-list.compo
 import { AddStudentComponent } from '../student/add-student/add-student.component';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { StudentDetailComponent } from '../student/student-detail/student-detail.component';
+import { AddComponent } from '../faculty/add/add.component';
+import { FacultyListComponent } from '../faculty/faculty-list/faculty-list.component';
 
 const routes:Routes = [
   {path:'dashboard',component:MainNavComponent,children:[
     {path:'student',component:StudentListComponent},
     {path:'add-student',component:AddStudentComponent},
-    {path:'detail/:id',component:StudentDetailComponent}
+    {path:'student-detail/:id',component:StudentDetailComponent},
+    {path:'faculty',component:AddComponent},
+    {path:'facultyList',component:FacultyListComponent}
   ]},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignUpComponent},

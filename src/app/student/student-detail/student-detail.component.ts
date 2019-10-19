@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import {Chart} from 'chart.js';
 import { MatDialog } from '@angular/material';
 import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.component';
+import { map } from 'rxjs/operators';
+import { pipe } from '@angular/core/src/render3/pipe';
 
 
 @Component({
@@ -18,31 +20,37 @@ export class StudentDetailComponent implements OnInit {
              public studentService : StudentService,
              public router : Router,
              public dialog : MatDialog) { }
-  id:string = '';
-  item:any;
-  isData:boolean = false;
-  mychart=[];
+
+   item:any = {};
+   mychart=[];
+
 
   ngOnInit() {
-    this.id = this._activeRoute.snapshot.params['id'];
-    console.log(this.id);
-    this.studentService.getStudent(this.id).subscribe(res=>{
-      // console.log('result',res);
-  
+    this.getStudent();
+  }
+
+  getStudent()
+  {
+    let id = this._activeRoute.snapshot.params['id'];
+    console.log(id);
+    // this.item = this.studentService.getStudent(id).pipe(map(res=>res.payload.val()));
+    // console.log(this.item);
+    this.studentService.getStudent(id).subscribe(res=>{
       this.item = res;
-      this.isData = true;
-      console.log('item',this.item);
-      var a = this.item.btech1st;
-      var b = this.item.btech2nd;
-      var c = this.item.btech3rd;
-      var d = this.item.btech4th;
-      var e = this.item.btech5th;
-      var f = this.item.btech6th;
-      var g = this.item.btech7th;
-      var h = this.item.btech8th;
+      console.log(res.payload.val().btech1st);
+      var a = res.payload.val().btech1st;
+      var b = res.payload.val().btech2nd;
+      var c = res.payload.val().btech3rd;
+      var d = res.payload.val().btech4th;
+      var e = res.payload.val().btech5th;
+      var f = res.payload.val().btech6th;
+      var g = res.payload.val().btech7th;
+      var h = res.payload.val().btech8th;
+
       console.log(a,b,c,d,e,f,g,h);
-      this.showChart(a,b,c,d,e,f,g,h)
-    })
+      this.showChart(a,b,c,d,e,f,g,h);
+
+    });
   }
 
   showChart(a,b,c,d,e,f,g,h)
@@ -87,35 +95,6 @@ export class StudentDetailComponent implements OnInit {
           }
       }
   });
-  }
-
-  // delete(){
-  //   this.studentService.deleteStudent(this.id).then(res=>{
-  //     console.log(res);
-  //     this.router.navigate(['/dashboard/student'])
-  //   })
-  // }
-
-  delete()
-  {
-    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
-      width: '350px',
-      data:{alertMsg:'Are you sure want to delete this job ?'}
-    });
-
-    dialogRef.afterClosed().subscribe(res=>{
-      // //console.log(res);
-      if(res)
-      {
-        //console.log(jobId);
-        this.studentService.deleteStudent(this.id).then(res=>{
-          //console.log(response);
-          console.log(res);
-          this.router.navigate(['/dashboard/student']);
-        })    
-      }
-    })
-    
   }
 
 

@@ -17,10 +17,11 @@
             <th>Regg. No</th>
             <th>Batch</th>
           </tr>
-          <tr (click)="viewDetails(item)" *ngFor="let item of item">
-            <td>{{item.payload.doc.data().name}}</td>
-            <td>{{item.payload.doc.data().reggNo}}</td>
-            <td>{{item.payload.doc.data().batch}}</td>
+          <tr *ngFor="let student of studentList">
+            <td (click)="viewDetails(student.$key)">{{student.name}}</td>
+            <td>{{student.reggNo}}</td>
+            <td>{{student.batch}}</td>
+            <td><button (click)="edit(student)">Edit</button></td>
           </tr>
         </table>
    </div>
