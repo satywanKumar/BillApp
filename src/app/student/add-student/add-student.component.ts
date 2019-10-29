@@ -16,9 +16,10 @@ export class AddStudentComponent implements OnInit {
               public router:Router,
               public dialog : MatDialog) { }
 
-      submitted:boolean;
+      submitted:boolean = false;
       formControls = this.studentService.form.controls;
       showSuccessMessage:boolean;
+      
 
   ngOnInit() {
     this.studentService.getAllStudent();

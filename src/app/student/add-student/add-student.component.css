@@ -1,3 +1,23 @@
 body{
     text-align: center;
+    font-family: 'montserrat';
+
+}
+
+mat-form-field
+{
+    width:85% !important;
+}
+button
+{
+    width:85% !important;
+}
+form{
+    padding:10px;
+}
+.sub-heading
+{
+    background-color: teal;
+    color:white;
+    padding:5px;
 }

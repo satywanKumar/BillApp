@@ -3,6 +3,7 @@ import { StudentService } from 'src/app/services/student.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { NoticeComponent } from 'src/app/notice/notice.component';
+import { ConfirmDialogComponent } from 'src/app/confirm-dialog/confirm-dialog.component';
 
 
 @Component({
@@ -20,6 +21,12 @@ export class StudentListComponent implements OnInit {
       deleteMessage:boolean;
       searchTerm:string;
       isData:boolean = false;
+      fullName:string;
+      reggNo:string;
+      batch:string;
+      searchFullName:string;
+      searchReggNo:string;
+      searchBatch:string;
 
 
   ngOnInit() {
@@ -48,5 +55,26 @@ export class StudentListComponent implements OnInit {
 
  edit(student){
    this.studentService.populateForm(student);
+ }
+ delete(id)
+ {
+  const dialogRef = this.dialog.open(ConfirmDialogComponent,{
+    data:{alertMsg:'Are you sure want to delete this job ?'}
+   });
+
+  dialogRef.afterClosed().subscribe(res=>{
+    if(res)
+    {
+      this.studentService.deleteStudent(id);
+    }
+  },
+  (err)=>{
+    this.dialog.open(NoticeComponent,{
+      data : {alertMsg:'can not delte.. please try again'}
+    })
+  }
+  )
+
+   this.getStudent();
  }
 }

@@ -1,50 +1,64 @@
-<div id="main">
-  <div class="row">
-      <div class="col-sm-2">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+   <div class="container">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Filter Data
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field>
+            <input matInput placeholder="Search By full Name" [(ngModel)]="searchTerm">
+          </mat-form-field>
 
-      </div>
-      <div class="col-sm-8">
-          <h3>Contact List</h3>
-        <div class="row">
-         <!-- <div class="col-sm-3">
-            <input type="text" placeholder="search by name" class="form-control" [(ngModel)]="searchTerm" />
-         </div> -->
-         <div class="col-sm-6">
-           
-         </div>
-         <div class="col-sm-3">
-            <button class="btn" (click)="createRoute()">Add New Contact</button>
-         </div>
-        </div>
-        <br><br>
-          <table class="table">
-              <thead>
-                <tr>
-                  <th>Full Name</th>
-                  <th>Email</th>
-                  <th>Phone</th>
-                  <th>Edit</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let contact of contactList">
-                  <td>{{contact.fullName}}</td>
-                  <td>{{contact.email}}</td>
-                  <td>{{contact.phone}}</td>
-                  <td><button class="btn btn-primary" (click)="contactService.populateForm(contact)">Edit</button></td>
-                  <td><button class="btn btn-danger" (click)="deleteContact(contact.$key)">Delete</button></td>
-                </tr>
-              </tbody>
-            </table>
-            <div *ngIf="deleteMessage">
-              <h3 style="color:white; font-style: italic">contact has been deleted from the database</h3>>
-            </div>
-
-      </div>
-      <div class="col-sm-2">
-
-      </div>
-  </div>
-    
-</div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <br>
+      <div *ngIf="!isData" style="text-align: center;">
+        <img class="loader" src="assets/tenor.gif"/>
+    </div>
+      <!-- <table *ngIf="isData">
+          <tr>
+            <th>Name</th>
+            <th>Regg. No</th>
+            <th>Batch</th>
+            <th>E</th>
+          </tr>
+          <tr *ngFor="let faculty of facultyList">
+            <td (click)="viewDetails(faculty.$key)">{{faculty.name}}</td>
+            <td (click)="viewDetails(faculty.$key)">{{faculty.email}}</td>
+            <td (click)="viewDetails(faculty.$key)">{{faculty.phone}}</td>
+            <td><p (click)="edit(faculty)">&#9998;</p></td>
+          </tr>
+        </table> -->
+        <mat-accordion *ngFor="let faculty of facultyList | facultyFilter:searchTerm">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{faculty.name}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+          
+             <div>
+               <p>Regg No : {{faculty.reggNo}}</p>
+               <p>Phone : {{faculty.phone}}</p>
+               <p>Qualification : {{faculty.degree}}</p>
+             </div><br>
+             <button (click)="viewDetails(faculty.$key)" mat-flat-button color="primary">Detail</button>
+             <button (click)="edit(faculty)" mat-flat-button style="background-color: teal; color:white;">Edit</button>
+             <button (click)="delete(faculty.$key)" mat-flat-button color="warn">Delete</button>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <br>
+   </div>
+</body>
+</html>

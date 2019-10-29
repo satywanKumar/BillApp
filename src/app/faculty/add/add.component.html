@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div>
+    <form [formGroup]="this.facultyService.form"  (ngSubmit)="onSubmit()">
+        <input type="hidden" formControlName="$key"/>
+        <mat-form-field>
+            <input matInput formControlName="name" type="text" placeholder="Full name"  required>
+            <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+                <input matInput formControlName="gender" type="text" placeholder="Gender"  required>
+                <mat-error>this field is required</mat-error>
+            </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput formControlName="email"  type="text" placeholder="Email"  required>
+            <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+         <input matInput formControlName="phone"  type="text" placeholder="phone"  required>
+         <mat-error>this field is required</mat-error>
+         </mat-form-field>
+         <br>
+        
+         <mat-form-field>
+            <input matInput formControlName="dob" type="text" placeholder="D.O.B(DD-MM-YY)"  required>
+            <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput formControlName="degree" type="text" placeholder="Higher Qualification"  required>
+            <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+            <input matInput formControlName="subject" type="text" placeholder="Subject Expert"  required>
+            <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input matInput formControlName="exp" type="text" placeholder="Previous Experience"  required>
+            <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input matInput formControlName="skill" type="text" placeholder="Skill"  required>
+            <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+         <input matInput formControlName="award" type="text" placeholder="award" >
+         <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input matInput formControlName="achievement" type="text" placeholder="Achievement">
+            <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+         <textarea matInput formControlName="tAdd" type="text" placeholder="Temp. Address"  required></textarea>
+         <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+         <textarea matInput formControlName="pAdd" type="text" placeholder="Permanent Address"  required></textarea>
+         <mat-error>this field is required</mat-error>
+        </mat-form-field>
+        <br>
+     
+        <mat-form-field>
+         <textarea matInput formControlName="additional" type="text" placeholder="Additional"  required></textarea>
+         <mat-error>this field is required</mat-error>
+      </mat-form-field>
+      <br>
+
+
+
+        <button [disabled]="!this.facultyService.form.valid" mat-raised-button color="primary" type="submit"> <i *ngIf="submitted" class="fas fa-spinner fa-spin"></i> submit</button>
+    </form>
+  </div>
+</body>
+</html>

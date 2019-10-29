@@ -8,22 +8,64 @@
 </head>
 <body>
    <div class="container">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Filter Data
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field>
+            <input matInput placeholder="search by name" type="text" [(ngModel)]="searchFullName">
+          </mat-form-field>
+      
+          <mat-form-field>
+            <input matInput placeholder="search by regg.No" type="text" [(ngModel)]="searchReggNo">
+          </mat-form-field>
+
+          <mat-form-field>
+              <input matInput placeholder="search by batch" type="text" [(ngModel)]="searchBatch">
+          </mat-form-field>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <br>
       <div *ngIf="!isData" style="text-align: center;">
-          <img class="loader" src="assets/tenor.gif"/>
-      </div>
-      <table *ngIf="isData">
+        <img class="loader" src="assets/tenor.gif"/>
+    </div>
+      <!-- <table *ngIf="isData">
           <tr>
             <th>Name</th>
             <th>Regg. No</th>
             <th>Batch</th>
+            <th>Edit</th>
           </tr>
           <tr *ngFor="let student of studentList">
             <td (click)="viewDetails(student.$key)">{{student.name}}</td>
-            <td>{{student.reggNo}}</td>
-            <td>{{student.batch}}</td>
-            <td><button (click)="edit(student)">Edit</button></td>
+            <td (click)="viewDetails(student.$key)">{{student.reggNo}}</td>
+            <td (click)="viewDetails(student.$key)">{{student.batch}}</td>
+            <td><p (click)="edit(student)">&#9998;</p></td>
           </tr>
-        </table>
+        </table> -->
+        <mat-accordion *ngFor="let student of studentList | studentFilter:searchFullName:searchReggNo:searchBatch">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{student.name}}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+          
+             <div>
+               <p>Regg No : {{student.reggNo}}</p>
+               <p>Branch : {{student.branch}}</p>
+               <p>Batch : {{student.batch}}</p>
+             </div><br>
+             <button (click)="viewDetails(student.$key)" mat-flat-button color="primary">Detail</button>
+             <button (click)="edit(student)" mat-flat-button style="background-color: teal; color:white;">Edit</button>
+             <button (click)="delete(student.$key)" mat-flat-button color="warn">Delete</button>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <br>
    </div>
 </body>
 </html>

@@ -35,6 +35,9 @@ import { NoticeComponent } from './notice/notice.component';
 import { AddComponent } from './faculty/add/add.component'
 import { FacultyService } from './services/faculty.service';
 import { FacultyListComponent } from './faculty/faculty-list/faculty-list.component';
+import { FacultyDetailComponent } from './faculty/faculty-detail/faculty-detail.component';
+import { StudentFilterPipe } from './student-filter.pipe';
+import { FacultyFilterPipe } from './faculty-filter.pipe';
 
 
 @NgModule({
@@ -50,7 +53,10 @@ import { FacultyListComponent } from './faculty/faculty-list/faculty-list.compon
     ConfirmDialogComponent,
     NoticeComponent,
     AddComponent,
-    FacultyListComponent
+    FacultyListComponent,
+    FacultyDetailComponent,
+    StudentFilterPipe,
+    FacultyFilterPipe
   ],
   imports: [
     AppRoutingModule,

@@ -1,0 +1,18 @@
+body{
+    font-family: 'montserrat';
+}
+.container
+{
+    padding: 20px;
+}
+.sub-heading
+{
+    background-color: teal;
+    color:white;
+    padding:5px;
+}
+.loader
+{
+    margin-top:100px;
+    width:70px;
+}

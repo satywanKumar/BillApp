@@ -18,7 +18,7 @@ export class AddComponent implements OnInit {
 
 
   ngOnInit() {
-    this.facultyService.getContact();
+    this.facultyService.getFaculty();
   }
 
   onSubmit()
@@ -29,18 +29,18 @@ export class AddComponent implements OnInit {
       if(this.facultyService.form.get('$key').value == null)
       {
         console.log('new',this.facultyService.form.value);
-        this.facultyService.insertContact(this.facultyService.form.value);
+        this.facultyService.insertFaculty(this.facultyService.form.value);
       }  
       else
       {
-        this.facultyService.updateContact(this.facultyService.form.value);
+        this.facultyService.updateFaculty(this.facultyService.form.value);
         console.log('added successfully');
       }
        this.showSuccessMessage = true;
        setTimeout(()=> this.showSuccessMessage = false,3000);
       this.submitted = false;
       this.facultyService.form.reset();
-      this.router.navigate(['/']);
+      this.router.navigate(['/dashboard/facultyList']);
       
     }
   }

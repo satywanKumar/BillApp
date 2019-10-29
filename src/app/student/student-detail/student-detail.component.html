@@ -6,25 +6,29 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    <!-- <div *ngIf="!isData" style="text-align: center;">
+    <div *ngIf="!isData" style="text-align: center;">
         <img class="loader" src="assets/tenor.gif"/>
-    </div> -->
+    </div>
     <div style="width:90%;">
         <canvas style="height:200px !important;" id="canvas"></canvas>
     </div>
-  <div class="container">
+  <div *ngIf="isData" class="container" id="profile">
     <div class="row">
       <div class="col-sm-12">
         <h2>{{item.payload.val().name}}</h2>
         <p>{{item.payload.val().email}}</p><br>
       </div><br>
       <p class="sub-heading">Personal Detail</p><br>
+      <p>Gender : {{item.payload.val().gender}}</p>
       <p>Reggistration No : {{item.payload.val().reggNo}}</p>
       <p>Batch : {{item.payload.val().batch}}</p>
       <p>Phone : {{item.payload.val().phone}}</p>
       <p>D.O.B : {{item.payload.val().dob}}</p>
       <p>Hobby : {{item.payload.val().hobby}}</p>
-      <p>Aadhar Number : {{item.payload.val().uid}}</p>
+      <p>Aadhar Number : {{item.payload.val().uid}}</p><br>
+      
+      <p class="sub-heading">Perent's Detail</p><br>
+
       <p>Parent's Name : {{item.payload.val().pName}}</p>
       <p>Relation : {{item.payload.val().relation}}</p>
       <p>Parent's Phone : {{item.payload.val().pPhone}}</p>
@@ -83,14 +87,9 @@
        <p>Skills : {{item.payload.val().skill}}</p>
        <p>Extra Course : {{item.payload.val().extraCourse}}</p>
        <p>Achievement : {{item.payload.val().achieve}}</p><br><br>
-       
-
-       <div class="footer">
-         <button mat-flat-button color="primary">Edit</button>
-         <!-- <button (click)="delete()" style="margin-left:10%;" mat-flat-button color="warn">Delete</button> -->
-       </div>
-
     </div>
   </div>
+  <button *ngIf="isData" (click)="print('profile')" style="width:100%;" mat-flat-button color="primary">Print</button>
+   <br><br>
 </body>
 </html>

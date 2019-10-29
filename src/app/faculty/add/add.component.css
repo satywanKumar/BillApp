@@ -1,34 +1,14 @@
-label
-{
-    
-    font-family: Courier;
-    color:white;
- 
-}
-input
-{
-    font-family:Comic Sans MS;
-    
-}
-form
-{
-    position: relative;
-    top:100px;
-}
-
-.invalid-feedback
-{
-    color:red !important;
-}
-#main
-{
-    padding:3vw;
-    background-color: blueviolet;
-}
-h2{
-    color:white;
+body{
     text-align: center;
 }
-body{
-    background-color: blueviolet;
+mat-form-field
+{
+    width:85% !important;
+}
+button
+{
+    width:85% !important;
+}
+form{
+    padding:10px;
 }

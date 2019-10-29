@@ -9,6 +9,7 @@ import { SignUpComponent } from '../sign-up/sign-up.component';
 import { StudentDetailComponent } from '../student/student-detail/student-detail.component';
 import { AddComponent } from '../faculty/add/add.component';
 import { FacultyListComponent } from '../faculty/faculty-list/faculty-list.component';
+import { FacultyDetailComponent } from '../faculty/faculty-detail/faculty-detail.component';
 
 const routes:Routes = [
   {path:'dashboard',component:MainNavComponent,children:[
@@ -16,7 +17,8 @@ const routes:Routes = [
     {path:'add-student',component:AddStudentComponent},
     {path:'student-detail/:id',component:StudentDetailComponent},
     {path:'faculty',component:AddComponent},
-    {path:'facultyList',component:FacultyListComponent}
+    {path:'facultyList',component:FacultyListComponent},
+    {path:'faculty-detail/:id',component:FacultyDetailComponent}
   ]},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignUpComponent},

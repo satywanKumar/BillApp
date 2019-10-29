@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container" id="profile">
+    <h2>{{item.payload.val().name}}</h2>
+    <p>{{item.payload.val().email}}</p>
+    <br>
+    <p class="sub-heading">General Detail</p>
+    <br>
+    <p>Gender : {{item.payload.val().gender}}</p>
+    <P>D.O.B : {{item.payload.val().dob}}</P>
+    <p>Phone : {{item.payload.val().phone}}</p>
+    <p>Qualifications : {{item.payload.val().degree}}</p>
+    <p>Teaching Subjects : {{item.payload.val().subject}}</p>
+    <p>Previous Experience : {{item.payload.val().exp}}</p>
+    <br>
+    <p class="sub-heading">Extra Detail</p><br>
+    <p>Skill : {{item.payload.val().skill}}</p>
+    <p>Award : {{item.payload.val().award}}</p>
+    <p>Achievement : {{item.payload.val().achievement}}</p>
+    <br>
+    <p class="sub-heading">Temp. Address</p><br>
+    <p>{{item.payload.val().tAdd}}</p>
+    <br>
+    <p class="sub-heading">Permanent Address</p><br>
+    <p>{{item.payload.val().pAdd}}</p>
+
+  </div>
+  <button style="width:100%" mat-flat-button color="primary" (click)="print('profile')">Print</button><br><br>
+</body>
+</html>

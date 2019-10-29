@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.router.navigate(["/dashboard"]);
+      this.router.navigate(["/login"]);
    }, 5000);
   }
 

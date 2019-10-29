@@ -23,7 +23,7 @@ export class StudentDetailComponent implements OnInit {
 
    item:any = {};
    mychart=[];
-
+   isData:boolean = false;
 
   ngOnInit() {
     this.getStudent();
@@ -36,6 +36,7 @@ export class StudentDetailComponent implements OnInit {
     // this.item = this.studentService.getStudent(id).pipe(map(res=>res.payload.val()));
     // console.log(this.item);
     this.studentService.getStudent(id).subscribe(res=>{
+      this.isData = true;
       this.item = res;
       console.log(res.payload.val().btech1st);
       var a = res.payload.val().btech1st;
@@ -97,6 +98,27 @@ export class StudentDetailComponent implements OnInit {
   });
   }
 
+
+  delete(id)
+  {
+    this.studentService.deleteStudent(id);
+    this.router.navigate(['/dashboard/student'])
+  }
+
+  edit(data)
+  {
+    this.studentService.populateForm(data);
+  }
+
+
+  print(id)
+  {
+    //console.log(id);
+    var printContent = document.getElementById(id).innerHTML;
+    document.body.innerHTML = printContent;
+    window.print();
+    location.reload();
+  }
 
   
 

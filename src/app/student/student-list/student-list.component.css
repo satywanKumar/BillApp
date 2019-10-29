@@ -8,8 +8,8 @@ body{
 table
 {
     width:100%;
-    border-collapse: collapse;
-    
+    border-collapse: collapse;   
+    box-shadow: 2px 2px 5px;;
 }
 th,td{
     text-align: left;
@@ -18,11 +18,7 @@ th,td{
 }
 th
 {
-    background-color:teal;
-    color: white;
-}
-td{
-    background-color: #eee;
+    background-color:#eee;
 }
 tr
 {
@@ -36,4 +32,8 @@ tr:hover
 {
     margin-top:100px;
     width:70px;
+}
+mat-form-field
+{
+    width:100% !important;
 }

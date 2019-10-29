@@ -19,29 +19,30 @@ export class StudentService {
   form = new FormGroup({
     $key: new FormControl(null),
     name: new FormControl('',Validators.required),
+    gender:new FormControl('',Validators.required),
     reggNo: new FormControl('',Validators.required),
     batch: new FormControl('',Validators.required),
-    branch:new FormControl(''),
-    email:new FormControl(''),
-    phone:new FormControl(''),
-    dob:new FormControl(''),
-    hobby:new FormControl(''),
-    uid:new FormControl(''),
-    pName:new FormControl(''),
-    pPhone:new FormControl(''),
-    relation:new FormControl(''),
-    tAdd:new FormControl(''),
-    tPin:new FormControl(''),
-    pAdd:new FormControl(''),
-    pPin:new FormControl(''),
-    tenthBoard:new FormControl(''),
-    tenthSchool:new FormControl(''),
-    tenthTotalMarks:new FormControl(''),
-    tenthObtainedMarks:new FormControl(''),
-    twelthBoard:new FormControl(''),
-    twelthSchool:new FormControl(''),
-    twelthTotalMarks:new FormControl(''),
-    twelthObtainedMarks:new FormControl(''),
+    branch:new FormControl('',Validators.required),
+    email:new FormControl('',Validators.required),
+    phone:new FormControl('',Validators.required),
+    dob:new FormControl('',Validators.required),
+    hobby:new FormControl('',Validators.required),
+    uid:new FormControl('',Validators.required),
+    pName:new FormControl('',Validators.required),
+    pPhone:new FormControl('',Validators.required),
+    relation:new FormControl('',Validators.required),
+    tAdd:new FormControl('',Validators.required),
+    tPin:new FormControl('',Validators.required),
+    pAdd:new FormControl('',Validators.required),
+    pPin:new FormControl('',Validators.required),
+    tenthBoard:new FormControl('',Validators.required),
+    tenthSchool:new FormControl('',Validators.required),
+    tenthTotalMarks:new FormControl('',Validators.required),
+    tenthObtainedMarks:new FormControl('',Validators.required),
+    twelthBoard:new FormControl('',Validators.required),
+    twelthSchool:new FormControl('',Validators.required),
+    twelthTotalMarks:new FormControl('',Validators.required),
+    twelthObtainedMarks:new FormControl('',Validators.required),
     btech1st:new FormControl(''),
     btech2nd:new FormControl(''),
     btech3rd:new FormControl(''),
@@ -59,6 +60,7 @@ export class StudentService {
   {
     this.studentList.push({
       name:student.name,
+      gender:student.gender,
       reggNo:student.reggNo,
       batch:student.batch,
       branch:student.branch,
@@ -106,6 +108,7 @@ export class StudentService {
   {
     this.studentList.update(student.$key,{
       name:student.name,
+      gender:student.gender,
       reggNo:student.reggNo,
       batch:student.batch,
       branch:student.branch,
@@ -152,17 +155,14 @@ export class StudentService {
   {
     this.student = this.firebase.object('/studentData/'+$key);
     return this.student.snapshotChanges();
-    
-
-
   }
   // getStudent(id)
   // {
   //   return this.db.collection('student').doc(id).valueChanges();
   // }
 
-  deleteStudent($key:string)
+  deleteStudent(id)
   {
-    this.studentList.remove($key);
+    this.studentList.remove(id);
   }
 }
